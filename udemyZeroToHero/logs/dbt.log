@@ -1,0 +1,29 @@
+[0m14:14:07.922929 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A17F88FCA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A1018C2740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A1018C29B0>]}
+
+
+============================== 14:14:07.925937 | 0e8e0fbb-90aa-46d1-b8c3-8fda0f27d852 ==============================
+[0m14:14:07.925937 [info ] [MainThread]: Running with dbt=1.9.0
+[0m14:14:07.926983 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\cesar\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:14:30.561761 [debug] [MainThread]: Starter project path: C:\Users\cesar\source\repos\gitRepos\cadbtProjects\udemyZeroToHero\dbt-venv\lib\site-packages\dbt\include\starter_project
+[0m14:14:30.578770 [info ] [MainThread]: 
+Your new dbt project "airbnbProject" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:14:30.580762 [info ] [MainThread]: Setting up your profile.
+[0m14:15:54.695784 [info ] [MainThread]: Profile airbnbProject written to C:\Users\cesar\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:15:54.698790 [debug] [MainThread]: Command `dbt init` succeeded at 14:15:54.697801 after 106.84 seconds
+[0m14:15:54.698790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A17F88FCA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A1018C2740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A1018C2170>]}
+[0m14:15:54.699716 [debug] [MainThread]: Flushing usage events
+[0m14:15:55.924220 [debug] [MainThread]: An error was encountered while trying to flush usage events
