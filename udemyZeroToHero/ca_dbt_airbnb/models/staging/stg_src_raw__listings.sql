@@ -16,4 +16,4 @@ SELECT
     CREATED_AT,
     UPDATED_AT
 FROM    
-    cte_raw_listings
+    cte_RAW_LISTINGS
