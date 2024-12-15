@@ -33,6 +33,8 @@ models:
   ca_dbt_airbnb:
     # Config indicated by + and applies to all files under models/example/
     staging:
+      +schema: stg
       +materialized: view
     bronze:
+      +schema: bronze
       +materialized: table
