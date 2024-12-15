@@ -33,10 +33,10 @@ models:
   ca_dbt_airbnb:
     staging:
       +schema: stg
-      +materialized: view
+      +materialized: ephemeral
     bronze:
       +schema: bronze
-      +materialized: table
+      +materialized: view
     silver:
       +schema: silver
       +materialized: table
