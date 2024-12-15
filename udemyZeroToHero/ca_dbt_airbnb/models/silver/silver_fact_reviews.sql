@@ -24,3 +24,5 @@ WHERE
 {% if is_incremental() %}
   AND REVIEW_DATE > ( SELECT MAX(REVIEW_DATE) FROM {{this}} ) --this = actual model
 {% endif %}
+
+-- In case you want to rebuild the whole table => dbt run --full-refresh
