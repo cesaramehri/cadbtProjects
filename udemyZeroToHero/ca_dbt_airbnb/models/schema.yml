@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: silver_dim_listings
+    columns:
+
+      - name: LISTING_ID
+        tests:
+          - unique
+          - not null
