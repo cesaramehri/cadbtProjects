@@ -15,4 +15,7 @@ models:
       - name: ROOM_TYPE
         tests:
           - accepted_values:
-              values: ['Entire home/apt','Private room','Shared room','Hotel room'] 
+              values: ['Entire home/apt','Private room','Shared room','Hotel room']
+      - name: MINIMUM_NIGHTS
+        tests:
+          - mcr_cgt_models_column_positive
