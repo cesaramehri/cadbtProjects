@@ -8,5 +8,3 @@ FROM
     {{ ref('silver_dim_listings') }}
 WHERE
     MINIMUM_NIGHTS < 1
-LIMIT
-    10
