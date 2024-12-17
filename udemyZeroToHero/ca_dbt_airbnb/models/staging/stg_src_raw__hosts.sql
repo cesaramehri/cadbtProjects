@@ -2,7 +2,7 @@ WITH cte_RAW_HOSTS AS (
     SELECT  
         *
     FROM    
-        DBT_AIRBNB_RAW.PUBLIC.RAW_HOSTS
+        {{ source('airbnb', 'RAW_HOSTS') }}
 )
 
 SELECT  
