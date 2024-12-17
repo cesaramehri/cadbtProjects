@@ -1,0 +1,1 @@
+{{ mcr_st_models_columns_nulls( ref('silver_dim_listings') ) }}
