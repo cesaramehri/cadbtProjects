@@ -15,7 +15,7 @@ WITH cte_bronze_raw_reviews AS
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['LISTING_ID', 'REVIEW_DATE', 'REVIEWER_NAME']) }}, -- generate unique hashed SPK
+    {{ dbt_utils.generate_surrogate_key(['LISTING_ID', 'REVIEW_DATE', 'REVIEWER_NAME']) }} AS REVIEW_ID_SPK, -- generate unique hashed SPK
     *
 FROM
     cte_bronze_raw_reviews
@@ -26,4 +26,4 @@ WHERE
   AND REVIEW_DATE > ( SELECT MAX(REVIEW_DATE) FROM {{this}} ) --this = actual model
 {% endif %}
 
--- In case you want to rebuild the whole table from scratch => dbt run --full-refresh
+-- In case you want to rebuild the whole table from scratch, and if you change the schema => dbt run --full-refresh
