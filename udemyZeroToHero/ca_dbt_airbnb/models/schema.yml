@@ -7,4 +7,4 @@ models:
       - name: LISTING_ID
         tests:
           - unique
-          - not null
+          - not_null
