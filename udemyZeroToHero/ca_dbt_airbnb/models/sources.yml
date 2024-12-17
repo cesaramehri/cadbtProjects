@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: airbnb
+    database: DBT_AIRBNB_RAW
+      schema: PUBLIC
+        tables:
+          -name: RAW_LISTINGS
+            identifier: RAW_LISTINGS
+          -name: RAW_HOSTS
+            identifier: RAW_HOSTS
+          -name: RAW_REVIEWS
+            identifier: RAW_REVIEWS
