@@ -1,10 +1,14 @@
 version: 2
-
 models:
   - name: silver_dim_listings
     columns:
-
       - name: LISTING_ID
         tests:
           - unique
           - not_null
+      - name: HOST_ID
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_dim_hosts')
+              field: HOST_ID
