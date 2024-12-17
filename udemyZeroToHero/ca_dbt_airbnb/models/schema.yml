@@ -1,7 +1,0 @@
-# assign the surrogate key config to your model
-version: 2
-
-models:
-  - name: silver_dim_hosts
-    config:
-      meta: {surrogate_key: true}

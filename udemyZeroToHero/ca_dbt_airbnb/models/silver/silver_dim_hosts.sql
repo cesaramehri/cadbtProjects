@@ -7,7 +7,6 @@ WITH cte_bronze_raw_hosts AS
 )
 
 SELECT
-    --{{ increment_sequence() }} AS HOST_SPK,
     HOST_ID,
 	NVL(HOST_NAME, 'Anonymous') AS HOST_NAME,
 	IS_SUPERHOST,
