@@ -8,3 +8,7 @@ sources:
       - name: RAW_LISTINGS
       - name: RAW_HOSTS
       - name: RAW_REVIEWS
+        loaded_at_field: date
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: hour}
