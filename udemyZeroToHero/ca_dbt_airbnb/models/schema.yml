@@ -12,3 +12,7 @@ models:
           - relationships:
               to: ref('silver_dim_hosts')
               field: HOST_ID
+      - name: ROOM_TYPE
+        tests:
+          - accepted_values:
+              values: ['Entire home/apt','Private room','Shared room','Hotel room'] 
