@@ -1,4 +1,4 @@
-{% test mcr_st_silver_dim_listings_min_nights(model, column_name) %}
+{% test mcr_cgt_models_column_positive(model, column_name) %}
 
 SELECT 
     *
