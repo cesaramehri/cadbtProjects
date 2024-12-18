@@ -1,21 +1,65 @@
 version: 2
 models:
   - name: silver_dim_listings
+    description: Dimension table listings containeing cleansed listings data
     columns:
       - name: LISTING_ID
+        description: ONK for the listing
         tests:
           - unique
           - not_null
       - name: HOST_ID
+        description: ONK for the host
         tests:
           - not_null
           - relationships:
               to: ref('silver_dim_hosts')
               field: HOST_ID
       - name: ROOM_TYPE
+        description: Type of the room
         tests:
           - accepted_values:
               values: ['Entire home/apt','Private room','Shared room','Hotel room']
       - name: MINIMUM_NIGHTS
         tests:
           - mcr_cgt_models_column_positive
+
+  - name: silver_dim_hosts
+    description: Dimension table hosts containing cleansed hosts data
+    columns:
+      - name: HOST_ID
+        description: ONK for the host
+        tests:
+          - unique
+          - not_null
+      - name: HOST_NAME
+        description: Name of the host
+        tests:
+          - not_null
+      - name: IS_SUPERHOST
+        description: Host description
+        tests:
+          - accepted_values:
+              values: ['t','f']
+
+  - name: silver_fact_reviews
+    description: Fact table reviews containing cleansed reviews data
+    columns:
+      - name: REVIEW_ID_SPK
+        description: SPK for the review
+      - name: LISTING_ID
+        description: Listing ID for the review
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_dim_listings')
+              field: LISTING_ID
+      - name: REVIEWER_NAME
+        description: Name of the reviewer
+        tests:
+          - not_null
+      - name: REVIEW_SENTIMENT
+        description: Sentiment of the reviewer
+        tests:
+          - accepted_values:
+              values: ['positive', 'neutral', 'negative']
