@@ -47,8 +47,3 @@ models:
 seeds:
   ca_dbt_airbnb:
     +schema: seed_data
-
-snapshots:
-  ca_dbt_airbnb:
-    +schema: seed_data
-    +materialized: snapshot
