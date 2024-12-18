@@ -33,7 +33,7 @@ models:
   ca_dbt_airbnb:
     staging:
       +schema: stg
-      +materialized: ephemeral
+      +materialized: view
     bronze:
       +schema: bronze
       +materialized: view
@@ -47,3 +47,8 @@ models:
 seeds:
   ca_dbt_airbnb:
     +schema: seed_data
+
+snapshots:
+  ca_dbt_airbnb:
+    +schema: seed_data
+    +materialized: snapshot
