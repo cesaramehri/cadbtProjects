@@ -1,6 +1,4 @@
-
-
-with cte_stg_src_raw_hosts AS
+WITH cte_stg_src_raw_hosts AS
 (
     SELECT 
         *

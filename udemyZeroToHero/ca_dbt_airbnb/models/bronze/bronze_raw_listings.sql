@@ -1,4 +1,4 @@
-with cte_stg_src_raw_listings AS
+WITH cte_stg_src_raw_listings AS
 (
     SELECT 
         *

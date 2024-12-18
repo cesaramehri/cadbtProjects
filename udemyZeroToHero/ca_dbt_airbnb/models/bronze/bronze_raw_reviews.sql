@@ -1,4 +1,4 @@
-with cte_stg_src_raw_reviews AS
+WITH cte_stg_src_raw_reviews AS
 (
     SELECT 
         *
