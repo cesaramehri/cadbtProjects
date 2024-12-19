@@ -19,12 +19,15 @@ models:
         description: Type of the room
         tests:
           - accepted_values:
-              values: ['Entire home/apt','Private room','Shared room','Hotel room']
+              values:
+                - Entire home/apt
+                - Private room
+                - Shared room
+                - Hotel room
       - name: MINIMUM_NIGHTS
         description: '{{ doc("silver_dim_listings__minimum_nights") }}'
         tests:
           - mcr_cgt_models_column_positive
-
   - name: silver_dim_hosts
     description: Dimension table hosts containing cleansed hosts data
     columns:
@@ -41,13 +44,26 @@ models:
         description: Host description
         tests:
           - accepted_values:
-              values: ['t','f']
-
+              values:
+                - t
+                - f
   - name: gold_dim_listings_with_hosts
     tests:
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
           compare_model: source('airbnb', 'RAW_LISTINGS')
-
+    columns:
+      - name: price
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: number
+          - dbt_expectations.expect_column_quantile_values_to_be_between:
+              quantile: .99
+              min_value: 50
+              max_value: 500
+          - dbt_expectations.expect_column_max_to_be_between:
+              max_value: 5000
+              config:
+                severity: warn
   - name: silver_fact_reviews
     description: Fact table reviews containing cleansed reviews data
     columns:
@@ -68,4 +84,7 @@ models:
         description: Sentiment of the reviewer
         tests:
           - accepted_values:
-              values: ['positive', 'neutral', 'negative']
+              values:
+                - positive
+                - neutral
+                - negative
