@@ -3,6 +3,11 @@ models:
   - name: silver_dim_listings
     description: Dimension table listings containeing cleansed listings data
     columns:
+      - name: LISTING_ID_SPK
+        description: SPK for the listing
+        tests:
+          - not_null
+    columns:
       - name: LISTING_ID
         description: ONK for the listing
         tests:
@@ -29,6 +34,11 @@ models:
         tests:
           - mcr_cgt_models_column_positive
   - name: silver_dim_hosts
+    columns:
+      - name: HOST_ID_SPK
+        description: SPK for the host
+        tests:
+          - not_null
     description: Dimension table hosts containing cleansed hosts data
     columns:
       - name: HOST_ID
