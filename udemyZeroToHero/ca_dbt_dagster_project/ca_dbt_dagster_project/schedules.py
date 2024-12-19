@@ -9,7 +9,7 @@ schedules = [
      build_schedule_from_dbt_selection(
          [ca_dbt_airbnb_dbt_assets],
          job_name="materialize_dbt_models",
-         cron_schedule="0 0 * * *",
+         cron_schedule="0 0 * * *",             # https://crontab.guru/#0_0_*_*_*
          dbt_select="fqn:*",
      ),
 ]
