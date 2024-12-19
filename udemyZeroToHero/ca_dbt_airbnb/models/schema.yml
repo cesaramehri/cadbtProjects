@@ -69,6 +69,9 @@ models:
     columns:
       - name: REVIEW_ID_SPK
         description: SPK for the review
+        constraints:
+          - type: not_null
+          - type: primary_key
       - name: LISTING_ID
         description: Listing ID for the review
         tests:
