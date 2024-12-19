@@ -46,7 +46,7 @@ models:
   - name: gold_dim_listings_with_hosts
     tests:
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
-        compare_model: source('airbnb', 'listings')
+          compare_model: source('airbnb', 'RAW_LISTINGS')
 
   - name: silver_fact_reviews
     description: Fact table reviews containing cleansed reviews data
