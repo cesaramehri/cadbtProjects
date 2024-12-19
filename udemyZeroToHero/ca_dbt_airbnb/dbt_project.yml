@@ -51,5 +51,5 @@ seeds:
 
 vars:
   dbt_var_user_name: default_user_name_project
-  start_date: "2024-12-16 00:00:00"
-  end_date: "2024-12-17 00:00:00"
+  start_date: "2024-12-15 00:00:00"
+  end_date: "2024-12-30 00:00:00"

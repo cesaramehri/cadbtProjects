@@ -2,6 +2,7 @@
 {{
   config(
     materialized = 'incremental',
+    unique_key = ['LISTING_ID', 'REVIEW_DATE', 'REVIEWER_NAME'],
     on_schema_change = 'fail'
     )
 }}
