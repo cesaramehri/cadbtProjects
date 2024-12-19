@@ -7,6 +7,7 @@ WITH cte_bronze_raw_hosts AS
 )
 
 SELECT
+    {{ dbt_utils.generate_surrogate_key(['HOST_ID', 'HOST_NAME']) }} AS HOST_ID_SPK,        -- generate unique hashed SPK
     HOST_ID,
 	NVL(HOST_NAME, 'Anonymous') AS HOST_NAME,
 	IS_SUPERHOST,
