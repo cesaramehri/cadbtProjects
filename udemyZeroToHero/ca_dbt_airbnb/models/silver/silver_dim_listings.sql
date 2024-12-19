@@ -7,6 +7,7 @@ with cte_bronze_raw_listings AS
 )
 
 SELECT
+    {{ dbt_utils.generate_surrogate_key(['LISTING_ID', 'LISTING_NAME']) }} AS LISTING_ID_SPK,        -- generate unique hashed SPK
     LISTING_ID,
     LISTING_NAME,
     ROOM_TYPE,
