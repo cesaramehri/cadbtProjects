@@ -11,6 +11,10 @@ sources:
             tests:
               - dbt_expectations.expect_column_distinct_count_to_equal:
                   value: 4
+          - name: price
+            tests:
+              - dbt_expectations.expect_column_values_to_match_regex:
+                  regex: "^\\\\$[0-9][0-9\\\\.]+$"
       - name: RAW_HOSTS
       - name: RAW_REVIEWS
         #loaded_at_field: date
