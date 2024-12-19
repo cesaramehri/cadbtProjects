@@ -6,6 +6,6 @@
 
     {#dbt Variables#} 
     {# dbt run-operation mcr_variables --vars "{dbt_var_name: Cesar_dbt}" #}
-    {{ log("Hello, my name is: " ~ var("dbt_var_name") ~ "!", info=True) }}
+    {{ log("Hello, my name is: " ~ var("dbt_var_name", "default_value") ~ "!", info=True) }}
 
 {% endmacro%}
