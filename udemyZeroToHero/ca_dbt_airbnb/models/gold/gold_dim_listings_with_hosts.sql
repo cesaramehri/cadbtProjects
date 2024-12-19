@@ -24,7 +24,7 @@ SELECT
 	H.IS_SUPERHOST AS HOST_IS_SUPERHOST,
 	L.CREATED_AT,
     GREATEST(L.UPDATED_AT, H.UPDATED_AT) AS UPDATED_AT,
-    dbt_load_date_
+    L.dbt_load_date_
 FROM
     cte_silver_dim_listings L
 LEFT JOIN
