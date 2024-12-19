@@ -7,6 +7,6 @@ WITH cte_RAW_REVIEWS AS (
 
 SELECT  
     *,
-    current_timestamp() AS load_date
+    current_timestamp() AS dbt_load_date_
 FROM    
     cte_RAW_REVIEWS

@@ -18,6 +18,7 @@ SELECT
     HOST_ID,
     REPLACE(PRICE_STR, '$')::NUMBER(10,2) AS PRICE,
     CREATED_AT,
-    UPDATED_AT
+    UPDATED_AT,
+    dbt_load_date_
 FROM
     cte_bronze_raw_listings
