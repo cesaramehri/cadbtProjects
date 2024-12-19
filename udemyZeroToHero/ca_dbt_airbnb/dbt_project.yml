@@ -48,3 +48,6 @@ models:
 seeds:
   ca_dbt_airbnb:
     +schema: seed_data
+
+vars:
+  dbt_var_user_name: default_user_name_project
