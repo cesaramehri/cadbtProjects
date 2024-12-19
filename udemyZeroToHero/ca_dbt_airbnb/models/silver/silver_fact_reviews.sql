@@ -37,7 +37,7 @@ WHERE
         AND REVIEW_DATE < '{{ var("end_date") }}'
     {% else %}
         AND REVIEW_DATE > ( SELECT MAX(REVIEW_DATE) FROM {{this}} )
-        {{ log('Loading ' ~ this ~ ' incrementally (we take into account all recent dates) ', info=True) }}
+        {{ log('Loading ' ~ this ~ ' incrementally (we take into account all recent dates) ', info=True) }} -- this does not allow you to implement backfills
     {% endif %}       
 {% endif %}
 
