@@ -6,6 +6,11 @@ sources:
     schema: PUBLIC  
     tables:
       - name: RAW_LISTINGS
+        columns:
+          - name: room_type
+            tests:
+              - dbt_expectations.expect_column_distinct_count_to_equal:
+                  value: 4
       - name: RAW_HOSTS
       - name: RAW_REVIEWS
         #loaded_at_field: date
