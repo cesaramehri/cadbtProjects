@@ -2,7 +2,7 @@
 {{
   config(
     materialized = 'incremental',
-    unique_key = ['LISTING_ID', 'REVIEW_DATE', 'REVIEWER_NAME'],
+    unique_key = 'REVIEW_ID_SPK',
     on_schema_change = 'fail'
     )
 }}
