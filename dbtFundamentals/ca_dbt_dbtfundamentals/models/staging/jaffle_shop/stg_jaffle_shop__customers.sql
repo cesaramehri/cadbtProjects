@@ -3,4 +3,4 @@ select
     first_name,
     last_name
 from 
-    DBT_DBTFUNDAMENTALS_RAW.jaffle_shop.customers
+    {{ source('jaffle_shop', 'customers') }}

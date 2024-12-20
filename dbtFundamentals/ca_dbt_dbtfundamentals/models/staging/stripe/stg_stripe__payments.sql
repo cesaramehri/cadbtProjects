@@ -9,4 +9,4 @@ select
     created as created_at
 
 from 
-    DBT_DBTFUNDAMENTALS_RAW.stripe.payment 
+    {{ source('stripe', 'payment') }} 
