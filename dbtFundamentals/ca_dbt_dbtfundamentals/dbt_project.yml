@@ -33,5 +33,5 @@ models:
   ca_dbt_dbtfundamentals:
     marts:
       +materialized: table
-    marts:
-      +materialized: views
+    staging:
+      +materialized: view
