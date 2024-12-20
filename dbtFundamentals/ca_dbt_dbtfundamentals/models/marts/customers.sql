@@ -1,3 +1,12 @@
+-- override the dbt_project.yml
+{{
+  config(
+    materialized='view'
+  )
+}}
+
+
+
 with cte_customers as (
     select
         id as customer_id,
