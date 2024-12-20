@@ -1,7 +1,7 @@
 -- override the dbt_project.yml
 {{
   config(
-    materialized='view'
+    materialized='table'
   )
 }}
 
