@@ -9,19 +9,16 @@
 
 with cte_customers as (
     select
-        id as customer_id,
-        first_name,
-        last_name
-    from DBT_DBTFUNDAMENTALS_RAW.jaffle_shop.customers
+        *
+    from 
+        {{ ref('stg_jaffle_shop__customers') }}
 ),
 
 cte_orders as (
     select
-        id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
-    from DBT_DBTFUNDAMENTALS_RAW.jaffle_shop.orders
+        *
+    from 
+        {{ ref('stg_jaffle_shop__orders') }}
 ),
 
 cte_customer_orders as (
