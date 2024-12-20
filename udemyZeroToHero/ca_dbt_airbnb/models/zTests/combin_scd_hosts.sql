@@ -1,7 +1,8 @@
 {{
     config(
         materialized='incremental',
-        unique_key = ['Merge_key']
+        unique_key = ['Merge_key'],
+        on_schema_change = 'fail'
     )
 }}
 
@@ -121,7 +122,3 @@ cte_scd_final AS
 
 SELECT *
 FROM cte_scd_final
-
-
-
-
