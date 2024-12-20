@@ -44,6 +44,8 @@ models:
     gold:
       +schema: gold
       +materialized: table
+    zTests:
+      +schema: zTests
 
 seeds:
   ca_dbt_airbnb:

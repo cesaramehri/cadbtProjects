@@ -1,1 +1,3 @@
 https://www.linkedin.com/pulse/effortlessly-combine-scd-1-scd-2-single-table-power-dbt-vivek-kumar-sgv0c/
+
+https://sarathd.medium.com/slowly-changing-dimensions-using-dbt-snapshots-2a46727f0d39
