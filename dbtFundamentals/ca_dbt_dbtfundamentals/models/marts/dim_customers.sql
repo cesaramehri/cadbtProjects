@@ -1,9 +1,9 @@
 -- override the dbt_project.yml
-{{
+{# {{
   config(
     materialized='table'
   )
-}}
+}} #}
 
 
 
