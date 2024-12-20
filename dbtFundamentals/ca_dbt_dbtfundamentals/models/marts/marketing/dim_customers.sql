@@ -41,7 +41,6 @@ final as (
         coalesce(cte_customer_orders.number_of_orders, 0) as number_of_orders
     from cte_customers
     left join cte_customer_orders using (customer_id)
-
 )
 
 select * from final

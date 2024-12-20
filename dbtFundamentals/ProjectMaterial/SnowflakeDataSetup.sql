@@ -50,7 +50,7 @@ file_format = (
 select * from dbt_dbtFundamentals_RAW.jaffle_shop.orders;
 
 -- payment
-create table dbt_dbtFundamentals_RAW.jaffle_shop.payment 
+create table dbt_dbtFundamentals_RAW.stripe.payment 
 ( id integer,
   orderid integer,
   paymentmethod varchar,
@@ -59,11 +59,11 @@ create table dbt_dbtFundamentals_RAW.jaffle_shop.payment
   created date,
   _batched_at timestamp default current_timestamp
 );
-copy into dbt_dbtFundamentals_RAW.jaffle_shop.payment (id, orderid, paymentmethod, status, amount, created)
+copy into dbt_dbtFundamentals_RAW.stripe.payment (id, orderid, paymentmethod, status, amount, created)
 from 's3://dbt-tutorial-public/stripe_payments.csv'
 file_format = (
     type = 'CSV'
     field_delimiter = ','
     skip_header = 1
     );
-select * from dbt_dbtFundamentals_RAW.jaffle_shop.payment;
+select * from dbt_dbtFundamentals_RAW.stripe.payment;
