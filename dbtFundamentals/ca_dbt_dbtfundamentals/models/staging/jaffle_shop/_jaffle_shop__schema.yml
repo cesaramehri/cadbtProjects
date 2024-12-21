@@ -2,15 +2,19 @@ version: 2
 
 models:
   - name: stg_jaffle_shop__customers
+    description: This is the staging of the source table customer, one unique customer per row
     columns:
       - name: customer_id
+        description: natural key of the customer
         tests:
           - unique
           - not_null
 
   - name: stg_jaffle_shop__orders
+    description: This is the staging of the source table orders, one unique order per row
     columns:
       - name: order_id
+        description: natural key of the order
         tests: 
           - unique
           - not_null
@@ -21,6 +25,7 @@ models:
               to: ref('stg_jaffle_shop__customers')
               field: customer_id
       - name: status
+        description: "{{ doc('order_status') }}"
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
