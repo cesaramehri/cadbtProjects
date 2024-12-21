@@ -8,3 +8,11 @@ sources:
     tables:
       - name: payment
         description: payment transactions
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: orderid
+            tests:
+              - not_null
