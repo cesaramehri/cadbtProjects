@@ -70,13 +70,10 @@ scd_final AS (
 
     -- Close the current record for SCD-2 changes
     SELECT 
-        null as CUSTOMER_SPK,
+        null AS CUSTOMER_SPK,
         t.CUSTOMER_ID,
         t.FIRST_NAME,
         t.LAST_NAME,
-        t.FIRST_ORDER_DATE,
-        t.MOST_RECENT_ORDER_DATE,
-        t.NUMBER_OF_ORDERS,
         t.effective_start_date,
         s.load_date AS effective_end_date,
         FALSE AS is_current

@@ -10,6 +10,9 @@ models:
       - name: order_id
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_jaffle_shop__orders')
+              field: order_id
       - name: payment_method
         tests:
           - accepted_values:
