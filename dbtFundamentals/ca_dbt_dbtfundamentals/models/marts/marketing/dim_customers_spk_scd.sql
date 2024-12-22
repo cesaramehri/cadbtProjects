@@ -36,14 +36,14 @@ cte_scd_update AS (
         t.is_current,
         t.CUSTOMER_SPK,
 
-        -- Detect SCD-2 changes (Account_Manager_ID, Billing_Address)
+        -- Detect SCD-2 changes (FIRST_NAME, LAST_NAME)
         CASE 
             WHEN t.CUSTOMER_ID IS NULL THEN TRUE  -- New record
             WHEN s.FIRST_NAME <> t.FIRST_NAME OR s.LAST_NAME <> t.LAST_NAME THEN TRUE
             ELSE FALSE
         END AS is_scd2_change,
         
-        -- Detect SCD-1 changes (Customer_Name, Phone_Number, Email)
+        -- Detect SCD-1 changes (MOST_RECENT_ORDER_DATE, NUMBER_OF_ORDERS)
         CASE 
             WHEN t.CUSTOMER_ID IS NOT NULL AND (
                 s.MOST_RECENT_ORDER_DATE <> t.MOST_RECENT_ORDER_DATE OR 
