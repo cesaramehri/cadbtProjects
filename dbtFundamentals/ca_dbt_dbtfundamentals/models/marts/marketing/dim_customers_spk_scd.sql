@@ -5,6 +5,10 @@
     )
 }}
 
+{#
+{% if is_incremental() %}
+#}
+
 WITH source_data AS
 (
     SELECT
@@ -114,3 +118,5 @@ SELECT
     *
 FROM 
     scd_final
+
+{# {% endif %} #}
