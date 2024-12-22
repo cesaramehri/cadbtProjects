@@ -10,7 +10,7 @@
 WITH source_data AS
 (
     SELECT
-        {{ dbt_utils.generate_surrogate_key(['customer_id', 'first_name', 'last_name']) }} AS CUSTOMER_SPK,
+        {{ dbt_utils.generate_surrogate_key(['customer_id']) }} AS CUSTOMER_SPK,
         CUSTOMER_ID,
         FIRST_NAME,
         LAST_NAME,
@@ -57,7 +57,7 @@ WITH source_data AS
 scd_final AS (
     -- Insert new records for SCD-2 changes
     SELECT 
-        CUSTOMER_SPK,
+        {{ dbt_utils.generate_surrogate_key(['customer_id', 'first_name']) }} AS CUSTOMER_SPK,
         CUSTOMER_ID,
         FIRST_NAME,
         LAST_NAME,
@@ -106,7 +106,7 @@ scd_final AS (
 {% endif %}
 
 {% if is_incremental() %}
-    SELECT * FROM  scd_final
+    SELECT * FROM scd_final
 {% else %}
     select * from source_data
 {% endif %}
