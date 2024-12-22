@@ -111,5 +111,7 @@ scd_final AS (
     WHERE is_scd1_change AND is_scd2_change = FALSE
 )
 
-SELECT *
-FROM scd_final;
+SELECT 
+    *
+FROM 
+    scd_final
