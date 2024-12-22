@@ -63,7 +63,8 @@ scd_final AS (
         LAST_NAME,
         load_date AS effective_start_date,
         NULL AS effective_end_date,
-        TRUE AS is_current
+        TRUE AS is_current,
+        load_date
     FROM 
         scd_update
     WHERE 
@@ -80,7 +81,8 @@ scd_final AS (
         t.LAST_NAME,
         t.effective_start_date,
         s.load_date AS effective_end_date,
-        FALSE AS is_current
+        FALSE AS is_current,
+        s.load_date
     FROM scd_update s
     JOIN {{ this }} t ON s.CUSTOMER_ID = t.CUSTOMER_ID
     WHERE s.is_scd2_change AND t.is_current = TRUE
@@ -96,17 +98,15 @@ scd_final AS (
         LAST_NAME,
         effective_start_date,
         effective_end_date,
-        TRUE AS is_current
+        TRUE AS is_current,
+        load_date
     FROM scd_update
     WHERE is_scd1_change AND is_scd2_change = FALSE
 )
 {% endif %}
 
 {% if is_incremental() %}
-SELECT 
-    *
-FROM 
-    scd_final
+    SELECT * FROM  scd_final
 {% else %}
     select * from source_data
 {% endif %}
