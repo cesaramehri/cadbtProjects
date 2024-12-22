@@ -75,7 +75,7 @@ scd_final AS (
 
     -- Close the current record for SCD-2 changes
     SELECT 
-        null AS CUSTOMER_SPK,
+        {{ dbt_utils.generate_surrogate_key(['t.customer_id']) }} AS CUSTOMER_SPK,
         t.CUSTOMER_ID,
         t.FIRST_NAME,
         t.LAST_NAME,
